@@ -1,0 +1,13 @@
+.student__portfolio-arrow {
+    width: 18px;
+    height: 18px;
+    margin-top: 22px;
+}
+
+@media screen and (max-width: 740px) {
+    .student__portfolio-arrow {
+        width: 12px;
+        height: 12px;
+        margin-top: 8px;
+    }
+}

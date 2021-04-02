@@ -1,0 +1,15 @@
+@import url(./__title/tech__title.css);
+@import url(./__subtitle/tech__subtitle.css);
+@import url(./__list/tech__list.css);
+@import url(./__element/tech__element.css);
+
+.tech {
+    background: #F5F5F5;
+    padding: 100px 70px 0;
+}
+
+@media screen and (max-width: 835px) {
+    .tech {
+        padding: 60px 18px 0;
+    }
+}

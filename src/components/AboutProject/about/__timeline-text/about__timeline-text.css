@@ -1,0 +1,16 @@
+.about__timeline-text {
+    font-family: Suisse Intl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #A0A0A0;
+}
+
+@media screen and (max-width: 740px) {
+    .about__timeline-text {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

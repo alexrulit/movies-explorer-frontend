@@ -1,0 +1,9 @@
+.hero__nav-element {
+    margin: 24px 40px 24px 0;
+}
+
+@media screen and (max-width: 740px) {
+    .hero__nav-element {
+        margin: 25px 24px 25px 0;
+    }
+}

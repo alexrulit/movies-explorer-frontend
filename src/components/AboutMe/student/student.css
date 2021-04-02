@@ -1,0 +1,22 @@
+@import url(./__about/student__about.css);
+@import url(./__title/student__title.css);
+@import url(./__subtitle/student__subtitle.css);
+@import url(./__text/student__text.css);
+@import url(./__social/student__social.css);
+@import url(./__social-link/student__social-link.css);
+@import url(./__portfolio-title/student__portfolio-title.css);
+@import url(./__portfolio/student__portfolio.css);
+@import url(./__portfolio-element/student__portfolio-element.css);
+@import url(./__portfolio-link/student__portfolio-link.css);
+@import url(./__foto/student__foto.css);
+@import url(./__portfolio-arrow/student__portfolio-arrow.css);
+
+.student {
+    margin: 110px 70px 0;
+}
+
+@media screen and (max-width: 740px) {
+    .student {
+        margin: 70px 14px 0;
+    }
+}

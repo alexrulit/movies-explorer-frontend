@@ -1,0 +1,22 @@
+@import url(./__title/footer__title.css);
+@import url(./__info/footer__info.css);
+@import url(./__copyright/footer__copyright.css);
+@import url(./__social/footer__social.css);
+@import url(./__social-element/footer__social-element.css);
+@import url(./__social-link/footer__social-link.css);
+
+.footer {
+    margin: 0 70px 20px;
+}
+
+@media screen and (max-width: 1010px) {
+    .footer {
+        margin: 0 30px 20px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .footer {
+        margin: 0 18px 20px;
+    }
+}

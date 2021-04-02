@@ -1,0 +1,17 @@
+@import url(./__title/hero__title.css);
+@import url(./__nav/hero__nav.css);
+@import url(./__nav-element/hero__nav-element.css);
+@import url(./__nav-link/hero__nav-link.css);
+
+.hero {
+    background: #073042;
+    background-image: url(../../../images/landing-logo.png);
+    background-repeat: no-repeat;
+    background-position: center bottom 70%;
+}
+
+@media screen and (max-width: 740px) {
+    .hero {
+        background-size: 248px 248px;
+    }
+}

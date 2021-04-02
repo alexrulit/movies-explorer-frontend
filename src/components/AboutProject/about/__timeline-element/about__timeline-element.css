@@ -1,0 +1,13 @@
+.about__timeline-element {
+    width: 228px;
+}
+
+.about__timeline-element:last-of-type {
+    flex-grow: 1;
+}
+
+@media screen and (max-width: 740px) {
+    .about__timeline-element {
+        width: 100px;
+    }
+}

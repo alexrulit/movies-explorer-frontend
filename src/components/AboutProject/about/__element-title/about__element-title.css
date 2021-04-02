@@ -1,0 +1,19 @@
+.about__element-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    margin-bottom: 27px;
+    max-width: 85%;
+}
+
+@media screen and (max-width: 740px) {
+    .about__element-title {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

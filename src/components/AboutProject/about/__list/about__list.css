@@ -1,0 +1,14 @@
+.about__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 70px 0 110px;
+}
+
+@media screen and (max-width: 740px) {
+    .about__list {
+        flex-direction: column;
+        margin: 60px 0;
+    }
+}

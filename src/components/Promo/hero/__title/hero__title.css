@@ -1,0 +1,20 @@
+.hero__title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    max-width: 730px;
+    margin: 0 auto 224px;
+    padding-top: 184px;
+}
+
+@media screen and (max-width: 740px) {
+    .hero__title {
+        font-size: 31px;
+        line-height: 39px;
+    }
+}

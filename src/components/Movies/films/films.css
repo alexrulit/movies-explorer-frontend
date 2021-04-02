@@ -1,0 +1,23 @@
+@import url(./__list/films__list.css);
+@import url(./__description/films__description.css);
+@import url(./__name/films__name.css);
+@import url(./__like/films__like.css);
+@import url(./__duration/films__duration.css);
+@import url(./__more/films__more.css);
+@import url(./__thumbnail/films__thumbnail.css);
+
+.films {
+    margin: 0 70px;
+}
+
+@media screen and (max-width: 1010px) {
+    .films {
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .films {
+        margin: 0 18px;
+    }
+}

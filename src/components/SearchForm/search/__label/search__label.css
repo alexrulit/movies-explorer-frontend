@@ -1,0 +1,14 @@
+.search__label {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000000;
+}
+
+@media screen and (max-width: 740px) {
+    .search__label {
+        font-size: 11px;
+    }
+}

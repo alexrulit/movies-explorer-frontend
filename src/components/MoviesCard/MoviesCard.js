@@ -3,12 +3,12 @@ import React from 'react';
 function MoviesCard(props) {
     return (
         <li className="films__element">
-            <img className="films__thumbnail" src={props.img} alt={props.alt}/>
             <div className="films__description">
                 <p className="films__name">{props.name}</p>
-                <button className="films__like"></button>
+                <p className="films__duration">{props.duration}</p>
             </div>
-            <p className="films__duration">{props.duration}</p>
+            <img class="films__thumbnail" src={props.img} alt={props.name}/>
+            <button className="films__save">Сохранить</button>
         </li>
     )
 }

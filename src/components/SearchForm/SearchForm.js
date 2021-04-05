@@ -9,9 +9,9 @@ function SearchForm() {
                     <button type="submit" className="search__button"></button>
                 </div>
                 <label className="search__checkbox-container">
-                    <span className="search__label">Короткометражки</span> 
                     <input type="checkbox" id="shortfilm" className="search__shortfilm"/>
                     <span className="search__checkbox"></span>
+                    <span className="search__label">Короткометражки</span> 
                 </label>
         </form>
     )

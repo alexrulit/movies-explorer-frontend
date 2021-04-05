@@ -4,17 +4,28 @@
     font-weight: normal;
     font-size: 50px;
     line-height: 58px;
-    text-align: center;
     letter-spacing: -0.04em;
     color: #FFFFFF;
-    max-width: 730px;
-    margin: 0 auto 224px;
-    padding-top: 184px;
+    max-width: 640px;
+    margin: 0 0 36px 70px;
+    padding-top: 75px;
+}
+
+@media screen and (max-width: 1010px) {
+    .hero__title {
+        margin: 0 auto 36px;
+        text-align: center;
+        padding-top: 450px;
+        font-size: 40px;
+        line-height: 50px;
+    }
 }
 
 @media screen and (max-width: 740px) {
     .hero__title {
         font-size: 31px;
         line-height: 39px;
+        padding-top: 320px;
+        margin: 0 auto 24px;
     }
 }

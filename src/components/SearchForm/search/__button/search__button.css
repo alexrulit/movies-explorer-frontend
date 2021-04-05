@@ -1,15 +1,15 @@
 .search__button {
     display: block;
-    background-image: url(../../../../images/find.png);
-    width: 34px;
+    background-color: #3456F3;
+    width: 80px;
     height: 34px;
     border: none;
-    border-radius: 50%;
-    background-color: white;
+    border-radius: 48px;
+    background-image: url(../../../../images/search_icon.svg);
     background-position: center;
     background-repeat: no-repeat;
     padding: 0;
-    margin: 4px 0 0 -40px;
+    margin: 3px 0 0 -83px;
     cursor: pointer;
 }
 

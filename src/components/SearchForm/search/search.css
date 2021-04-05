@@ -8,15 +8,9 @@
 
 .search {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 80px 70px;
     border-bottom: 1px solid #E8E8E8;
-}
-
-@media screen and (max-width: 1270px) {
-    .search {
-        flex-direction: column;
-    }
 }
 
 @media screen and (max-width: 1010px) {

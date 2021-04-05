@@ -1,10 +1,11 @@
 @import url(./__list/films__list.css);
 @import url(./__description/films__description.css);
 @import url(./__name/films__name.css);
-@import url(./__like/films__like.css);
+@import url(./__save/films__save.css);
 @import url(./__duration/films__duration.css);
 @import url(./__more/films__more.css);
 @import url(./__thumbnail/films__thumbnail.css);
+@import url(./__element/films__element.css);
 
 .films {
     margin: 0 70px;

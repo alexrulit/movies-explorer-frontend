@@ -5,11 +5,8 @@ function Promo() {
     return (
         <section className="hero">
             <h1 className="hero__title">Учебный проект студента факультета Веб-разработки.</h1>
-            <ul className="hero__nav">
-                <li className="hero__nav-element"><a href="#about" className="hero__nav-link">О проекте</a></li>
-                <li className="hero__nav-element"><a href="#tech" className="hero__nav-link">Технологии</a></li>
-                <li className="hero__nav-element"><a href="#student" className="hero__nav-link">Студент</a></li>
-            </ul>
+            <p className="hero__subtitle">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
+            <button className="hero__button">Узнать больше</button>
         </section>
     )
 }

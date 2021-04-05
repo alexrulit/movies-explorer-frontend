@@ -1,6 +1,6 @@
 import React from 'react';
 import './header/header.css';
-import Logo from '../../images/logo.svg';
+import Logo from '../../images/logo.png';
 
 function Header(props) {
     const color = props.color;

@@ -19,7 +19,7 @@
     }
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 540px) {
     .films__list {
         grid-template-columns: repeat(1, 1fr);
     }

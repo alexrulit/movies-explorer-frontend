@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
@@ -21,7 +22,7 @@ function App() {
           <Movies />
         </Route>
         <Route path="/saved-movies">
-          <Movies />
+          <SavedMovies />
         </Route>
         <Route path="/profile">
           <Profile />

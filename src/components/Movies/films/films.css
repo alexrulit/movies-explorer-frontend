@@ -6,6 +6,9 @@
 @import url(./__more/films__more.css);
 @import url(./__thumbnail/films__thumbnail.css);
 @import url(./__element/films__element.css);
+@import url(./__save/_unsaved/films__save_unsaved.css);
+@import url(./__save/_saved/films__save_saved.css);
+@import url(./__save/_delete/films__save_delete.css);
 
 .films {
     margin: 0 70px;

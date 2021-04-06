@@ -1,0 +1,18 @@
+.about__timeline-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    padding: 9px 0;
+    background: #F2F2F2;
+}
+
+@media screen and (max-width: 740px) {
+    .about__timeline-title {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

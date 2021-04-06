@@ -1,0 +1,15 @@
+.search__checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 20px;
+    background-image: url(../../../../images/unchecked.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.search__shortfilm:checked + .search__checkbox {
+    background-image: url(../../../../images/checked.png);
+}

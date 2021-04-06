@@ -1,0 +1,18 @@
+@import url(./__list/about__list.css);
+@import url(./__element-title/about__element-title.css);
+@import url(./__element-content/about__element-content.css);
+@import url(./__timeline/about__timeline.css);
+@import url(./__timeline-element/about__timeline-element.css);
+@import url(./__timeline-title/about__timeline-title.css);
+@import url(./__timeline-text/about__timeline-text.css);
+@import url(./__timeline/_green/about__timeline_green.css);
+
+.about {
+    margin: 110px 70px 110px;
+}
+
+@media screen and (max-width: 740px) {
+    .about {
+        margin: 70px 18px 70px;
+    }
+}

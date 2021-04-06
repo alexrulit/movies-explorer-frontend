@@ -1,0 +1,27 @@
+.hero__button {
+    display: block;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    width: 129px;
+    height: 36px;
+    background: #073042;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin: 0 0 0 70px;
+}
+
+.hero__button:hover {
+    opacity: .6;
+    transition: opacity .2s ease-in;
+}
+
+@media screen and (max-width: 1010px) {
+    .hero__button {
+        margin: 0 auto;
+    }
+}

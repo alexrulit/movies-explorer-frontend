@@ -1,0 +1,7 @@
+.student__portfolio-element {
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.student__portfolio-element:last-of-type {
+    border-bottom: none;
+}

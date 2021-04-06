@@ -1,0 +1,21 @@
+.student__foto {
+    width: 270px;
+    height: 327px;
+}
+
+@media screen and (max-width: 1032px) {
+    .student__foto {
+        width: 255px;
+        height: 307px;
+        margin-left: 50px;
+    }
+} 
+
+@media screen and (max-width: 630px) {
+    .student__foto {
+        order: -1;
+        width: 292px;
+        height: 352px;
+        margin: 0 auto;
+    }
+}

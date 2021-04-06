@@ -1,0 +1,16 @@
+.profile__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 410px;
+}
+
+.profile__item:last-of-type {
+    border-top: 1px solid #E8E8E8;
+}
+
+@media screen and (max-width: 520px) {
+    .profile__item {
+        min-width: 260px;
+    }
+}

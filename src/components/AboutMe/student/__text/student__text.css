@@ -1,0 +1,27 @@
+.student__text {
+    max-width: 600px;
+    margin: 0 0 100px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000000;
+    mix-blend-mode: normal;
+}
+
+@media screen and (max-width: 1032px) {
+    .student__text {
+        max-width: 364px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .student__text {
+        font-size: 11px;
+        line-height: 16px;
+        margin: 0 0 40px;
+    }
+}

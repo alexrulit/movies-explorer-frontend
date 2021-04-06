@@ -1,0 +1,15 @@
+@import url(./__title/profile__title.css);
+@import url(./__list/profile__list.css);
+@import url(./__item/profile__item.css);
+@import url(./__label/profile__label.css);
+@import url(./__content/profile__content.css);
+@import url(./__edit/profile__edit.css);
+@import url(./__logout/profile__logout.css);
+
+.profile {
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

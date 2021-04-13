@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './films/films.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-function Movies() {
+
+function Movies(props) {
+    const [filteredCards, setFilteredCards] = useState([]);
+
     return (
-        <div>
-            <SearchForm/>
+        <CurrentUserContext.Provider value={props.currentUser}>
+            <Header loggedIn={props.loggedIn} color={false} userData={props.userData} signOut={props.signOut} windowWidth={props.windowWidth} handleOpenMenu={props.handleOpenMenu}/>
+            <SearchForm cards={props.cards} filterCards={setFilteredCards} savedCards={props.savedCards}/>
             <section className="films">
-                <MoviesCardList/>
+                <MoviesCardList cards={filteredCards} isLoad={props.isLoad} handleMoreCards={props.handleMoreCards} initCardsCount={props.initCardsCount} handleCardSave={props.handleCardSave} handleCardDelete={props.handleCardDelete}/>
             </section>
-        </div>
+            <Footer/>
+        </CurrentUserContext.Provider>
     )
 }
 

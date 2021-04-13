@@ -1,4 +1,6 @@
 .films__thumbnail {
+    height: 200px;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    cursor: pointer;
 }

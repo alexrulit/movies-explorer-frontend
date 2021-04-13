@@ -1,0 +1,20 @@
+.menu__link {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    cursor: pointer;
+    text-align: center;
+    margin: 28px auto 0;
+    text-decoration: none;
+    color: black;
+}
+
+.menu__link:first-of-type {
+    margin: 160px auto 0;
+}
+
+.menu__link:last-of-type {
+    margin: auto auto 92px;
+}

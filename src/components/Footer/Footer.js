@@ -8,9 +8,9 @@ function Footer() {
             <div className="footer__info">
                 <p className="footer__copyright">&copy; 2020</p>
                 <ul className="footer__social">
-                    <li className="footer__social-element"><a href="#" class="footer__social-link">Яндекс.Практикум</a></li>
-                    <li className="footer__social-element"><a href="#" class="footer__social-link">Github</a></li>
-                    <li className="footer__social-element"><a href="#" class="footer__social-link">Facebook</a></li>
+                    <li className="footer__social-element"><a href="#" className="footer__social-link">Яндекс.Практикум</a></li>
+                    <li className="footer__social-element"><a href="#" className="footer__social-link">Github</a></li>
+                    <li className="footer__social-element"><a href="#" className="footer__social-link">Facebook</a></li>
                 </ul>
             </div>
         </footer>

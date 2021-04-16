@@ -5,6 +5,7 @@
 @import url(./__label/search__label.css);
 @import url(./__checkbox/search__checkbox.css);
 @import url(./__box/search__box.css);
+@import url(./__input-error/search__input-error.css);
 
 .search {
     display: flex;

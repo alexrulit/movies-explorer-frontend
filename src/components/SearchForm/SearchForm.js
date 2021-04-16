@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import './search/search.css';
 import * as Filter from '../Filter/Filter';
+import * as FormValidator from '../FormValidator/FormValidator';
 
 function SearchForm(props) {
-    const [findWord, setFindWord] = useState('');
+    const validator = FormValidator.useFormWithValidation();
     const [duration, setDuration] = useState(false);
     const lastSearch = JSON.parse(localStorage.getItem('search_string'));
-
-    function handleChangeWord(e) {
-        setFindWord(e.target.value);
-    }
-
+    
+  
     function handleChangeDuration(e) {
         setDuration(e.target.checked);
     }
@@ -20,13 +18,18 @@ function SearchForm(props) {
     }
 
     function handleSubmit(e) {
+        const findWord = validator.values.findWord;
 
         e.preventDefault();
 
-        localStorage.setItem('search_string', JSON.stringify({findWord, duration}));
-        
-        console.log(search(findWord, duration));
-        props.filterCards(search(findWord, duration));
+
+
+        if (validator.isValid) {
+            localStorage.setItem('search_string', JSON.stringify({findWord, duration}));
+            props.filterCards(search(findWord, duration));
+        } else {
+            validator.resetForm();
+        }
     }
 
     React.useEffect(() => {
@@ -36,11 +39,12 @@ function SearchForm(props) {
     }, [props.cards, props.savedCards])
 
     return (
-        <form action="#" className="search" onSubmit={handleSubmit}>
+        <form action="#" className="search" noValidate onSubmit={handleSubmit}>
                 <div className="search__box">
-                    <input type="text" value={findWord} onChange={handleChangeWord} className="search__input" placeholder="Фильм" required/>
+                    <input name="findWord" type="text" value={validator.values.findWord} onChange={validator.handleChange} className="search__input" placeholder="Фильм" required/>
                     <button type="submit" className="search__button"></button>
                 </div>
+                <span className="search__input-error">{validator.errors.findWord}</span>
                 <label className="search__checkbox-container">
                     <input type="checkbox" id="shortfilm" className="search__shortfilm" onChange={handleChangeDuration}/>
                     <span className="search__checkbox"></span>

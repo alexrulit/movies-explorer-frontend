@@ -1,4 +1,4 @@
-.form__button {
+.profile__button {
     background: #3456F3;
     border: none;
     border-radius: 3px;
@@ -12,14 +12,15 @@
     margin: 50px 0 30px;
     height: 45px;
     cursor: pointer;
+    width: 410px;
 }
 
-.form__button:hover {
+.profile__button:hover {
     opacity: .7;
     transition: opacity .2s ease-in;
 }
 
-.form__button:disabled {
+.profile__button:disabled {
     background: #F8F8F8;
     color: #C2C2C2;
     cursor: default;

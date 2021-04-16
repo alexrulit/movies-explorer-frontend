@@ -1,46 +1,42 @@
 import React from 'react';
 import './profile/profile.css';
 import Header from '../Header/Header';
+import EditProfile from '../EditProfile/EditProfile';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Profile(props) {
+    const [edit, setEdit] = React.useState(false);
+    const currentUser = React.useContext(CurrentUserContext);
 
-    const [name, setName] = React.useState(props.currentUser.name);
-    const [email, setEmail] = React.useState(props.currentUser.email);
-
-    function handleChangeName(e) {
-        setName(e.target.value);
-    }
-
-    function handleChangeEmail(e) {
-        setEmail(e.target.value);
-    }
-
-    function handleSubmit(e) {
+    function handleEdit(e) {
 
         e.preventDefault();
-      
-        props.handleUpdateUser(email, name);
 
+        setEdit(true);
     }
 
     return (
         <div>
-            <Header loggedIn={props.loggedIn} color={false} userData={props.userData} signOut={props.signOut} windowWidth={props.windowWidth} handleOpenMenu={props.handleOpenMenu}/>
+            <Header loggedIn={props.loggedIn} color={false} signOut={props.signOut} windowWidth={props.windowWidth} handleOpenMenu={props.handleOpenMenu}/>
+            { !edit ?
             <section className="profile">
-                <h1 className="profile__title">Привет,&nbsp;{name}!</h1>
+                <h1 className="profile__title">Привет,&nbsp;{currentUser.name}!</h1>
                 <ul className="profile__list">
                     <li className="profile__item">
                         <p className="profile__label">Имя</p>
-                        <input type="text" className="profile__content" value={name} onChange={handleChangeName}></input>
+                        <p className="profile__content">{currentUser.name}</p>
                     </li>
                     <li className="profile__item">
                         <p className="profile__label">Почта</p>
-                        <input type="email" className="profile__content" value={email} onChange={handleChangeEmail}></input>
+                        <p className="profile__content">{currentUser.email}</p>
                     </li>
                 </ul>
-                <a href="#" className="profile__edit" onClick={handleSubmit}>Редактировать</a>
-                <a href="#" className="profile__logout" onClick={props.signOut}>Выйти из аккаунта</a>
+                <a href="/profile" className="profile__edit" onClick={handleEdit}>Редактировать</a>
+                <a href="/" className="profile__logout" onClick={props.signOut}>Выйти из аккаунта</a>
             </section>
+            :
+            <EditProfile userData={currentUser} handleUpdateUser={props.handleUpdateUser} fetchError={props.fetchError}/>
+            }
         </div>
     )
 }

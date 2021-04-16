@@ -5,6 +5,8 @@
 @import url(./__content/profile__content.css);
 @import url(./__edit/profile__edit.css);
 @import url(./__logout/profile__logout.css);
+@import url(./__button/profile__button.css);
+@import url(./__input-error/profile__input-error.css);
 
 .profile {
     margin: 0 70px;

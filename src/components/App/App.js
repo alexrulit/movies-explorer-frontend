@@ -7,12 +7,14 @@ import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import PageNotFound from '../PageNotFound/PageNotFound';
 import * as mainApi from '../../utils/mainApi';
 import * as moviesApi from '../../utils/moviesApi';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import '../../vendor/inter.css';
 import './App.css';
 import { withRouter, useLocation } from 'react-router-dom';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function App(props) {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -25,6 +27,7 @@ function App(props) {
   const [windowWidth, setWindowsWidth] = useState(1280);
   const [initCardsCount, setInitCardsCount] = useState(12);
   const [loadCardsCount, setLoadCardsCount] = useState(3);
+  const [fetchError, setFetchError] = useState();
   const path = useLocation().pathname;
 
   function updateWindowWidth() {
@@ -40,6 +43,8 @@ function App(props) {
         setLoggedIn(true);
         setUserData(email);
         props.history.push("/movies");
+      } else {
+        setFetchError(data.message);
       }
     })
     .catch((err) => { 
@@ -60,12 +65,14 @@ function App(props) {
 
     mainApi.register(password, email, name)
     .then((res) => {
-      if(res.status !== undefined && res.status === 200 || res.status === 201) {
-        props.history.push("/signin");
+      if(res.status === 200 || res.status === 201) {
+        handleLogin(password, email);
       } else {
-        console.log(res.status);
+        return res.json();
       }
-      props.history.push("/signin");
+      })
+      .then(data => {
+        setFetchError(data.message);
       })
       .catch(err => {
         console.log(err);
@@ -224,6 +231,7 @@ function App(props) {
     mainApi.updateUser(jwt, email, name)
       .then((data) => {
         setCurrentUser(data);
+        props.history.push("/movies");
       })
       .catch(err => {
         console.log(err);
@@ -231,20 +239,20 @@ function App(props) {
   }
 
   return (
+    <CurrentUserContext.Provider value={currentUser}>
     <div className="App"> 
       <Switch>
         <Route path="/signin">
-          <Login handleLogin={handleLogin}/>
+          <Login loggedIn={loggedIn} handleLogin={handleLogin} fetchError={fetchError}/>
         </Route>
         <Route path="/signup">
-          <Register handleRegister={handleRegister}/>
+          <Register loggedIn={loggedIn} handleRegister={handleRegister} fetchError={fetchError}/>
         </Route>
         <ProtectedRoute path="/movies"
         loggedIn={loggedIn}
         component={Movies}
         cards={cards}
         savedCards={savedCards}
-        userData={userData}
         signOut={signOut}
         isLoad={isLoad}
         handleMoreCards={handleMoreCards}
@@ -252,37 +260,37 @@ function App(props) {
         windowWidth={windowWidth}
         handleOpenMenu={handleOpenMenu}
         handleCardSave={handleCardSave}
-        handleCardDelete={handleCardDelete}
-        currentUser={currentUser}/>
+        handleCardDelete={handleCardDelete}/>
         <ProtectedRoute path="/saved-movies"
-        loggedIn={loggedIn}
-        component={SavedMovies} 
-        cards={savedCards}
-        userData={userData} 
-        signOut={signOut}
-        isLoad={isLoad}
-        handleMoreCards={handleMoreCards}
-        initCardsCount={initCardsCount}
-        windowWidth={windowWidth}
-        handleOpenMenu={handleOpenMenu}
-        handleCardDelete={handleCardDelete}
-        currentUser={currentUser}/>
+          loggedIn={loggedIn}
+          component={SavedMovies} 
+          cards={savedCards} 
+          signOut={signOut}
+          isLoad={isLoad}
+          handleMoreCards={handleMoreCards}
+          initCardsCount={initCardsCount}
+          windowWidth={windowWidth}
+          handleOpenMenu={handleOpenMenu}
+          handleCardDelete={handleCardDelete}/>
         <ProtectedRoute path="/profile"
-        loggedIn={loggedIn}
-        component={Profile} 
-        userData={currentUser} 
-        signOut={signOut}
-        windowWidth={windowWidth}
-        handleOpenMenu={handleOpenMenu}
-        currentUser={currentUser}
-        setCurrentUser={setCurrentUser}
-        handleUpdateUser={handleUpdateUser}/>
-        <Route path="/">
-          <Main loggedIn={loggedIn} userData={userData} signOut={signOut} currentUser={currentUser} windowWidth={windowWidth} handleOpenMenu={handleOpenMenu}/>
+          loggedIn={loggedIn}
+          component={Profile} 
+          signOut={signOut}
+          windowWidth={windowWidth}
+          handleOpenMenu={handleOpenMenu}
+          setCurrentUser={setCurrentUser}
+          handleUpdateUser={handleUpdateUser}
+          fetchError={fetchError}/>
+        <Route exact path="/">
+            <Main loggedIn={loggedIn} userData={userData} signOut={signOut} currentUser={currentUser} windowWidth={windowWidth} handleOpenMenu={handleOpenMenu}/>
+        </Route>
+        <Route path="*">
+          <PageNotFound />
         </Route>
       </Switch>
       <BurgerMenu open={menu} setClose={handleCloseMenu}/>
     </div>
+    </CurrentUserContext.Provider>
   );
 }
 

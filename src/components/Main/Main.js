@@ -10,7 +10,7 @@ import './block-title/block-title.css';
 function Main(props) {
     return (
         <div>
-            <Header loggedIn={props.loggedIn} color={true} userData={props.userData} signOut={props.signOut} windowWidth={props.windowWidth} handleOpenMenu={props.handleOpenMenu}/>
+            <Header loggedIn={props.loggedIn} color={true} signOut={props.signOut} windowWidth={props.windowWidth} handleOpenMenu={props.handleOpenMenu}/>
             <main className="main">
                 <Promo/>
                 <AboutProject/>

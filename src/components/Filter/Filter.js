@@ -12,8 +12,8 @@ const isSaved = (array, savedArray) => {
 
 export const filter = (array, savedArray, string, duration) => {
     if (duration) {
-        return isSaved(array.filter((item) => item.nameRU.includes(string) && parseInt(item.duration) <= 40), savedArray);
+        return isSaved(array.filter((item) => item.nameRU.toLowerCase().includes(string.toLowerCase()) && parseInt(item.duration) <= 40), savedArray);
     } else {
-        return isSaved(array.filter((item) => item.nameRU.includes(string)), savedArray);
+        return isSaved(array.filter((item) => item.nameRU.toLowerCase().includes(string.toLowerCase())), savedArray);
     }
 }

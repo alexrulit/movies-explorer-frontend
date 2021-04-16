@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://84.201.156.189';
+export const BASE_URL = 'http://api.nemesis.students.nomoredomains.rocks';
 
 export const register = (password, email, name) => {
   return fetch(`${BASE_URL}/signup`, {
@@ -19,13 +19,8 @@ export const authorize = (password, email) => {
       body: JSON.stringify({password, email})
     })
     .then((response => response.json()))
-    .then((data) => {
-      if (data.token){
-        return data;
-      }
-    })
-    .catch(err => console.log(err))
-}; 
+    .then(data => data)
+};
 
 export const getContent = (token) => {
     return fetch(`${BASE_URL}/users/me`, {

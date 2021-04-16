@@ -6,6 +6,7 @@
 @import url(./__button/form__button.css);
 @import url(./__sublink/form__sublink.css);
 @import url(./__link/form__link.css);
+@import url(./__input-error/form__input-error.css);
 
 .form {
     display: flex;

@@ -1,0 +1,13 @@
+@import url(./__error/notfound__error.css);
+@import url(./__suberror/notfound__suberror.css);
+@import url(./__button/notfound__button.css);
+
+.notfound {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

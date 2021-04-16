@@ -9,17 +9,18 @@ function MoviesCardList(props) {
 
     return (
         <div>
+            {props.cards.length === 0 && <span className="films__notfound">Ничего не найдено</span>}
             <ul className="films__list">
-                {props.cards.slice(0,props.initCardsCount).map((item) => {
-                    let id;
-                    if (props.isSavedPlace) {
-                        id = item.movieId;
-                    } else {
-                        id = item.id;
-                    }
-                    return (
-                        <MoviesCard isSavedPlace={props.isSavedPlace} savedCards={props.savedCards} key={id} card={item} handleCardSave={props.handleCardSave} handleCardDelete={props.handleCardDelete}/>
-                    );
+                { props.cards.slice(0,props.initCardsCount).map((item) => {
+                        let id;
+                        if (props.isSavedPlace) {
+                            id = item.movieId;
+                        } else {
+                            id = item.id;
+                        }
+                        return (
+                            <MoviesCard isSavedPlace={props.isSavedPlace} savedCards={props.savedCards} key={id} card={item} handleCardSave={props.handleCardSave} handleCardDelete={props.handleCardDelete}/>
+                        );
                 })}
             </ul>
             <button className={moreButtonClass} onClick={props.handleMoreCards}>Ещё</button>

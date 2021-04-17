@@ -1,0 +1,15 @@
+@import url(./__list/menu__list.css);
+@import url(./__close-button/menu__close-button.css);
+@import url(./__link/menu__link.css);
+@import url(./__account/menu__account.css);
+@import url(./_visibility/menu_visibility-visible.css);
+@import url(./_visibility/menu_visibility-hidden.css);
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+}

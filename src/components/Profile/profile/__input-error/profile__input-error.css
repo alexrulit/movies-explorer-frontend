@@ -1,0 +1,9 @@
+.profile__input-error {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #FF3055;
+    margin: -10px 0 10px;
+}

@@ -1,0 +1,8 @@
+.menu__account {
+    width: 26px;
+    height: 30px;
+    background: #F5F5F5;
+    border-radius: 4px;
+    object-fit: none;
+    margin: 0 0 -9px 17px;
+}

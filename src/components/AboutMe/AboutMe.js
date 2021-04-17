@@ -22,9 +22,9 @@ function AboutMe() {
                 </div>
                 <h3 className="student__portfolio-title">Портфолио</h3>
                 <ul className="student__portfolio">
-                    <li className="student__portfolio-element"><a href="#" className="student__portfolio-link">Статичный сайт<img src={Arrow} class="student__portfolio-arrow" alt="Стрелка"/></a></li>
-                    <li className="student__portfolio-element"><a href="#" className="student__portfolio-link">Адаптивный сайт<img src={Arrow} class="student__portfolio-arrow" alt="Стрелка"/></a></li>
-                    <li className="student__portfolio-element"><a href="#" className="student__portfolio-link">Одностраничное приложение<img src={Arrow} class="student__portfolio-arrow" alt="Стрелка"/></a></li>
+                    <li className="student__portfolio-element"><a href="#" className="student__portfolio-link">Статичный сайт<img src={Arrow} className="student__portfolio-arrow" alt="Стрелка"/></a></li>
+                    <li className="student__portfolio-element"><a href="#" className="student__portfolio-link">Адаптивный сайт<img src={Arrow} className="student__portfolio-arrow" alt="Стрелка"/></a></li>
+                    <li className="student__portfolio-element"><a href="#" className="student__portfolio-link">Одностраничное приложение<img src={Arrow} className="student__portfolio-arrow" alt="Стрелка"/></a></li>
                 </ul>
             </section>
     )

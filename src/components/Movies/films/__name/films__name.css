@@ -1,4 +1,5 @@
 .films__name {
+    overflow: hidden;
     font-family: Inter;
     font-style: normal;
     font-weight: 500;
@@ -6,4 +7,7 @@
     line-height: 18px;
     color: #000000;
     margin: 0;
+    max-width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

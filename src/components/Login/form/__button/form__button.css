@@ -18,3 +18,9 @@
     opacity: .7;
     transition: opacity .2s ease-in;
 }
+
+.form__button:disabled {
+    background: #F8F8F8;
+    color: #C2C2C2;
+    cursor: default;
+}

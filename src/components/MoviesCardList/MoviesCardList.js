@@ -1,41 +1,32 @@
 import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import Film1 from '../../images/100.jpg';
-import Film2 from '../../images/33.jpg';
+import Preloader from '../Preloader/Preloader';
 
-function MoviesCardList() {
+function MoviesCardList(props) {
+
+    let moreButtonClass = `${props.cards.length <= props.initCardsCount ? 'films__more_disabled' : 'films__more'}`;
+    
+
     return (
         <div>
+            {props.cards.length === 0 && <span className="films__notfound">Ничего не найдено</span>}
             <ul className="films__list">
-                <MoviesCard isSaved='true' img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard isSaved='true' img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard isSaved='true' img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard isSaved='true' img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film1} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
-                <MoviesCard img={Film2} alt="В погоне за бенгси" name="В погоне за бенгси" duration="27 минут"/>
+                { props.cards.slice(0,props.initCardsCount).map((item) => {
+                        let id;
+                        if (props.isSavedPlace) {
+                            id = item.movieId;
+                        } else {
+                            id = item.id;
+                        }
+                        return (
+                            <MoviesCard isSavedPlace={props.isSavedPlace} savedCards={props.savedCards} key={id} card={item} handleCardSave={props.handleCardSave} handleCardDelete={props.handleCardDelete}/>
+                        );
+                })}
             </ul>
-            <button className="films__more">Ещё</button>
+            <button className={moreButtonClass} onClick={props.handleMoreCards}>Ещё</button>
+            {props.isLoad && <Preloader />}
         </div>
+        
     )
 }
 
